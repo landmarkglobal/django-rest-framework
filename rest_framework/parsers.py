@@ -197,13 +197,13 @@ class XMLParser(BaseParser):
             val = int(value)
             if str(val) == value:
                 return val
-            else:
-                pass
         except ValueError:
             pass
 
         try:
-            return decimal.Decimal(value)
+            val = decimal.Decimal(value)
+            if str(val) == value:
+                return val
         except decimal.InvalidOperation:
             pass
 
