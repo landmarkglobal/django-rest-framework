@@ -194,7 +194,11 @@ class XMLParser(BaseParser):
             pass
 
         try:
-            return int(value)
+            val = int(value)
+            if str(val) == value:
+                return val
+            else:
+                pass
         except ValueError:
             pass
 
